@@ -1,0 +1,56 @@
+<!-- main app container -->
+<div class="contactus-page">
+  <div class="form">
+
+        <!-- HEADING  -->
+        <p class="title pull-left">Contact Us</p>
+        <span class="title pull-right">
+          <img
+            src="https://github.com/Dare2Code/Rebel-Contact-Us/blob/master/contact-us-app/src/app/img/logo.png?raw=true"
+            alt="logo"
+            height="35px">
+        </span>
+        <div class="contactus-form">
+
+          <!-- FORM BEGIN -->
+          <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+
+            <!-- NAME CONTAINER -->
+            <div class="form-group">
+              <input type="text" formControlName="name" placeholder="Your Name" class="input" [ngClass]="{ 'is-invalid': submitted && form.name.errors }" />
+              <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+                <div *ngIf="form.name.errors.required">* Name is required</div>
+              </div>
+            </div>
+
+            <!-- EMAIL CONTAINER -->
+            <div class="form-group">
+              <input type="text" placeholder="Your Email" formControlName="email" class="input" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" />
+              <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                <div *ngIf="form.email.errors.required">* Email is required</div>
+                <div *ngIf="form.email.errors.email">* Email must be a valid one</div>
+              </div>
+            </div>
+
+            <!-- MESSAGE CONTAINER -->
+            <div class="form-group">
+              <textarea formControlName="message" placeholder="Message you wish to send us" class="message" [ngClass]="{ 'is-invalid': submitted && form.message.errors }" ></textarea>
+              <div *ngIf="submitted && form.message.errors" class="invalid-feedback">
+                <div *ngIf="form.message.errors.required">* Message is required</div>
+              </div>
+            </div>
+
+            <!-- Footnote if any -->
+            <div class="form-group">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+
+          </form>
+          <!-- FORM ENDED -->
+
+        </div>
+      </div>
+    </div>
+
+
+<!-- Footnote if any -->

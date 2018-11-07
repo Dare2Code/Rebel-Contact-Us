@@ -40,12 +40,12 @@ export class ContactUsComponent implements OnInit {
     this.stringData = JSON.stringify(this.contactUsForm.value);
 
     // save data to Firebase realtime db - API
-    this.serverService.storeServers(this.contactUsData)
+    this.serverService.storeServers(this.stringData)
       .subscribe(
         (response) => console.log('response:' + response),
         (error) => console.log('Error: ' + error)
       );
 
-    console.log('my data is - ' + JSON.stringify(this.contactUsForm.value));
+    console.log('my data is - ' + this.stringData);
   }
 }

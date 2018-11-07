@@ -10,7 +10,7 @@
             alt="logo"
             height="35px">
         </span>
-        <div class="contactus-form">
+        <div *ngIf="isDataPosted" class="contactus-form">
 
           <!-- FORM BEGIN -->
           <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
@@ -49,6 +49,11 @@
           <!-- FORM ENDED -->
 
         </div>
+      <div *ngIf="!isDataPosted" class="alert alert-danger" role="alert">
+        <p>Sorry! Something went wrong, please try again or call our customer service.</p>
+        <hr>
+        <p class="mb-0">We thrive very hard to provide an awesome service and will continue to do so.</p>
+      </div>
       </div>
     </div>
 

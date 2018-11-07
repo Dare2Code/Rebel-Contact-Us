@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {ServerService} from './server.service';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+
+/*pipe(catchError(error => {
+  return throwError(...)
+}))*/
 
 @Component({
   selector: 'app-contact-us',
@@ -12,12 +18,12 @@ export class ContactUsComponent implements OnInit {
   contactUsForm: FormGroup;
   submitted = false;
   stringData;
-  contactUsData = [{
-    message: 'hello'
-  }];
+  // Alert user that the data is posted or not
+  isDataPosted = true;
 
   constructor(private formBuilder: FormBuilder, private serverService: ServerService ) { }
 
+  // building contactus form immediately after loading formbuiler
   ngOnInit() {
     this.contactUsForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -37,15 +43,17 @@ export class ContactUsComponent implements OnInit {
       return;
     }
 
+    // storing user entered data into a string format so its readable by serverservice
     this.stringData = JSON.stringify(this.contactUsForm.value);
 
     // save data to Firebase realtime db - API
-    this.serverService.storeServers(this.stringData)
+    this.serverService.storeContactUsData(this.stringData)
       .subscribe(
-        (response) => console.log('response:' + response),
-        (error) => console.log('Error: ' + error)
+        (response) => {console.log('response:' + response); this.isDataPosted = true; },
+        (error) => {console.log('Error: ' + error); this.isDataPosted = false; }
       );
 
+    // logging data to confirm - dev mode only
     console.log('my data is - ' + this.stringData);
   }
 }

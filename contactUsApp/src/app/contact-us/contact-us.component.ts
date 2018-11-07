@@ -12,7 +12,7 @@ export class ContactUsComponent implements OnInit {
   submitted = false;
   stringData;
   // Alert user that the data is posted or not
-  isDataPosted = true;
+  isDataPosted = 'na';
 
   constructor(private formBuilder: FormBuilder, private serverService: ServerService ) { }
 
@@ -42,8 +42,8 @@ export class ContactUsComponent implements OnInit {
     // save data to Firebase realtime db - API
     this.serverService.storeContactUsData(this.stringData)
       .subscribe(
-        (response) => {console.log('response:' + response); this.isDataPosted = true; },
-        (error) => {console.log('Error: ' + error); this.isDataPosted = false; }
+        (response) => {console.log('Response:' + response); this.isDataPosted = 'true' },
+        (error) => {console.log('Error:' + error); this.isDataPosted = 'false'; }
       );
 
     // logging data to confirm - dev mode only

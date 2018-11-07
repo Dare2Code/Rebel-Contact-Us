@@ -10,7 +10,9 @@
             alt="logo"
             height="35px">
         </span>
-        <div *ngIf="isDataPosted" class="contactus-form">
+
+    <!-- disabling form in case of error -->
+    <div *ngIf="isDataPosted" class="contactus-form">
 
           <!-- FORM BEGIN -->
           <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
@@ -47,15 +49,16 @@
 
           </form>
           <!-- FORM ENDED -->
-
         </div>
-      <div *ngIf="!isDataPosted" class="alert alert-danger" role="alert">
-        <p>Sorry! Something went wrong, please try again or call our customer service.</p>
-        <hr>
-        <p class="mb-0">We thrive very hard to provide an awesome service and will continue to do so.</p>
-      </div>
-      </div>
+
+    <!-- "Error message" Only displays in case of any error from connection -->
+    <div *ngIf="!isDataPosted" class="alert alert-danger" role="alert">
+      <br><br><br><br><p>Sorry! Something went wrong, please try again or call our customer service.</p>
+      <hr>
+      <p class="mb-0">We thrive very hard to provide an awesome service and will continue to do so.</p>
     </div>
+  </div>
+</div>
 
 
 <!-- Footnote if any -->

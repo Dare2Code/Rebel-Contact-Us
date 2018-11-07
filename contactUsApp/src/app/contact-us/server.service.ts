@@ -6,11 +6,13 @@ import {Http} from '@angular/http';
 export class ServerService {
   constructor (private http: Http) {}
   storeContactUsData(servers: any[]) {
+
     // Adding headers
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('https://httptesting-f2f61.firebaseio.com/data',
+
+    // Connecting to Firebase test API server
+    return this.http.post('https://httptesting-f2f61.firebaseio.com/data.json',
       servers,
       {headers: headers } );
-
   }
 }

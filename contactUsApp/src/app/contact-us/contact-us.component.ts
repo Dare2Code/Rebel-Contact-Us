@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import {ServerService} from './server.service';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
-
-/*pipe(catchError(error => {
-  return throwError(...)
-}))*/
 
 @Component({
   selector: 'app-contact-us',

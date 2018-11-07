@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import {ServerService} from './server.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,8 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactUsComponent implements OnInit {
   contactUsForm: FormGroup;
   submitted = false;
+  stringData;
+  contactUsData = [{
+    message: 'hello'
+  }];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private serverService: ServerService ) { }
 
   ngOnInit() {
     this.contactUsForm = this.formBuilder.group({
@@ -31,6 +37,15 @@ export class ContactUsComponent implements OnInit {
       return;
     }
 
-    console.log(JSON.stringify(this.contactUsForm.value));
+    this.stringData = JSON.stringify(this.contactUsForm.value);
+
+    // save data to Firebase realtime db - API
+    this.serverService.storeServers(this.contactUsData)
+      .subscribe(
+        (response) => console.log('response:' + response),
+        (error) => console.log('Error: ' + error)
+      );
+
+    console.log('my data is - ' + JSON.stringify(this.contactUsForm.value));
   }
 }

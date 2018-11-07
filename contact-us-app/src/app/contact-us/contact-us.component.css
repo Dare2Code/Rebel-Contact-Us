@@ -1,0 +1,9 @@
+.contactus-form {
+  background: whitesmoke;
+  color: darkgray;
+  margin: 25px auto;
+  width: 600px;
+  height: 500px;
+  position: relative;
+  font-family: 'Montserrat';
+}

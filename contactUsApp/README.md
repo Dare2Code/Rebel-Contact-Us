@@ -34,4 +34,4 @@ To see the project working functionality and get a feel on its features, plese c
 
 This project is created for 'Rebel' by Sriavstav Janapalli. Usage of the code is NOT restricted by anymeans :) 
 
-### Knowladge is to be forked ;)
+### Knowledge is to be forked ;)

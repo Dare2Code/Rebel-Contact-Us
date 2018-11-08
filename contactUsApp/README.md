@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Working Model - DEMO
+
+To see the project working functionality and get a feel on its features, plese checkout this [video](https://youtu.be/RVJQ4MNlWko).
+
+## Credits
+
+This project is created for 'Rebel' by Sriavstav Janapalli. Usage of the code is NOT restricted by anymeans :) 
+
+### Knowladge is to be forked ;)

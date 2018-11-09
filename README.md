@@ -9,7 +9,8 @@ PS: Added more features after posting this video - Heads up!
 ## Project Build
 This project uses Angular v6, Bootstrap CSS Framework v3 and Firebase Realtimedb for API connection test.
 
-Install Bootstrap via 
+Project should work as it is. 
+However, in case styling is creating problems, please Install Bootstrap via 
 ```
 npm install --save bootstrap@3
 ```

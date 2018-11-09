@@ -2,6 +2,7 @@
 A Contact Us form used to submit a message along with a name and email address.
 
 Working Demo: https://youtu.be/RVJQ4MNlWko
+PS: Added more features after posting this video - Heads up!
 
 
 ## Project Build

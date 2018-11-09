@@ -41,9 +41,9 @@
             </div>
           </div>
 
-          <!-- Footnote if any -->
+          <!-- Submit -->
           <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <button class="button">Submit</button>
           </div>
 
         </form>
@@ -51,15 +51,33 @@
       </div>
     <!-- "Error message" Only displays in case of any error from connection -->
     <div *ngIf="isDataPosted === 'false'" class="alert alert-danger" role="alert">
-      <br><br><br><br><p>Sorry! Something went wrong, please try again or call our customer service.</p>
+      <br><br><br><br><p><strong>Oh snap!</strong> Something went wrong, please try again later or call our customer service.</p>
       <hr>
       <p class="mb-0">We thrive very hard to provide an awesome service and will continue to do so.</p>
+      <div class="row">
+        <div class="col-xs-6 col-centered">
+          <br><br>
+          <button class="btn btn-warning" (click)="isDataPosted = 'na'; contactUsForm.reset()">
+          <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+            <strong> Go Back</strong>
+        </button>
+        </div>
+      </div>
     </div>
 
     <div *ngIf="isDataPosted === 'true'" class="alert alert-success" role="alert">
       <br><br><br><br><p> your message was sent successfully.</p>
       <hr>
       <p class="mb-0">We thrive very hard to provide an awesome service and will continue to do so.</p>
+      <div class="row">
+        <div class="col-xs-6 col-centered">
+          <br><br>
+          <button class="btn btn-warning" (click)="isDataPosted = 'na'; contactUsForm.reset()">
+          <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+            <strong> Go Back</strong>
+        </button>
+        </div>
+      </div>
     </div>
 
   </div>

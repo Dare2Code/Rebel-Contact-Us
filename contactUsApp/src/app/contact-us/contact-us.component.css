@@ -41,7 +41,7 @@
   font-size: 14px;
 
 }
-.form button {
+.form .button {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -55,7 +55,7 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form .button:hover,.form .button:active,.form .button:focus {
   background: #43A047;
 }
 .title {
@@ -83,4 +83,9 @@ body {
 .invalid-feedback {
   font-size: 1.0em;
   color: indianred;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
 }
